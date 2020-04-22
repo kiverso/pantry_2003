@@ -6,8 +6,8 @@ require "./lib/cook_book"
 
 class CookBookTest < Minitest::Test
   def setup
-    @ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
-    @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 200})
+    @ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 100})
+    @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     @ingredient3 = Ingredient.new({name: "Ground Beef", unit: "oz", calories: 100})
     @ingredient4 = Ingredient.new({name: "Bun", unit: "g", calories: 75})
     @pantry = Pantry.new
@@ -44,6 +44,13 @@ class CookBookTest < Minitest::Test
     @cookbook.add_recipe(@recipe2)
     expected = ["Cheese", "Macaroni", "Ground Beef", "Bun"]
     assert_equal expected, @cookbook.ingredients
+  end
+
+  def test_it_can_get_highest_calorie_meal
+    @cookbook.add_recipe(@recipe1)
+    @cookbook.add_recipe(@recipe2)
+
+    assert_equal @recipe2, @cookbook.highest_calorie_meal
   end
 end
 

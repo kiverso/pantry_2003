@@ -5,4 +5,7 @@ class Recipe
     @ingredients_required = ingredients_required
   end
 
+  def add_ingredient(ingredient, quantity)
+    @ingredients_required[ingredient] += quantity
+  end
 end

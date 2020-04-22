@@ -53,17 +53,3 @@ class CookBookTest < Minitest::Test
     assert_equal @recipe2, @cookbook.highest_calorie_meal
   end
 end
-
-
-
-# pry(main)> recipe2 = Recipe.new("Cheese Burger")
-#
-# pry(main)> cookbook = CookBook.new
-# # => #<CookBook:0x00007faae6a42228 @recipes=[]>
-#
-# pry(main)> cookbook.add_recipe(recipe1)
-#
-# pry(main)> cookbook.add_recipe(recipe2)
-#
-# pry(main)> cookbook.recipes
-# # => [#<Recipe:0x00007faae69c9698...>, #<Recipe:0x00007faae692a110...>]

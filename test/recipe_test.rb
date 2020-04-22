@@ -14,6 +14,11 @@ class RecipeTest < Minitest::Test
   def test_it_exists
     assert_instance_of Recipe, @recipe1
   end
+
+  def test_it_has_readable_attributes
+    assert_equal ({}), @recipe1.ingredients_required
+    assert_equal "Mac and Cheese", @recipe1.name
+  end
 end
 
 
